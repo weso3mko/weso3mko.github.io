@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أسود - الأناقة السوداء</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #000000 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #ffffff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(255,255,255,0.5); }
+            to { text-shadow: 0 0 40px rgba(255,255,255,0.8), 0 0 60px rgba(255,255,255,0.4); }
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 120px 5% 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 4rem;
+            background: linear-gradient(45deg, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .product-card:hover::before {
+            left: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+        }
+
+        .product-image i {
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(255,255,255,0.5);
+        }
+
+        .hoodie::after {
+            content: 'زخرفة بيضاء أنيقة';
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.9rem;
+            color: #ffffff;
+            opacity: 0.8;
+        }
+
+        .product h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            font-size: 1.2rem;
+            color: #888;
+            margin-left: 1rem;
+        }
+
+        .current-price {
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact-btn {
+            background: linear-gradient(45deg, #ffffff, #e0e0e0);
+            color: #000000;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255,255,255,0.3);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 4rem 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .phone {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .whatsapp-link {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #ffffff, #cccccc);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">أسود</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>الأناقة السوداء</h1>
+            <p>تصاميم فاخرة تجمع بين الأناقة والجودة العالية</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <h2 class="section-title">المنتجات المتوفرة</h2>
+        
+        <div class="products-grid">
+            <!-- Hoodie Product -->
+            <div class="product-card">
+                <div class="product-image hoodie">
+                    <i class="fas fa-hoodie"></i>
+                </div>
+                <h3>هودي أسود فاخر</h3>
+                <div class="price">
+                    <span class="current-price">600 جنيه</span>
+                    <span class="old-price">800 جنيه</span>
+                </div>
+                <a href="tel:0111222333" class="contact-btn">
+                    <i class="fas fa-phone"></i> اطلب الآن
+                </a>
+            </div>
+
+            <!-- Sweatpants Product -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-tshirt"></i>
+                </div>
+                <h3>سويت بانتس أسود</h3>
+                <div class="price">
+                    <span class="current-price">600 جنيه</span>
+                    <span class="old-price">800 جنيه</span>
+                </div>
+                <a href="tel:0111222333" class="contact-btn">
+                    <i class="fas fa-phone"></i> اطلب الآن
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>للطلب والاستفسار</h2>
+        <div class="phone">0111222333</div>
+        <p>اتصل بنا الآن للحجز</p>
+        <a href="https://wa.me/20111222333" class="whatsapp-link" target="_blank">
+            <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+        </a>
+    </section>
+</body>
+                                     </html>
