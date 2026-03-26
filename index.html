@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صيدلية ربيع - الطالبية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .pharmacy-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pharmacy-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #4CAF50, #2196F3, #FF9800);
+        }
+
+        .logo {
+            font-size: 3.5em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #4CAF50, #2196F3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .pharmacy-name {
+            font-size: 2.2em;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .info-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0;
+            font-size: 1.3em;
+            color: #34495e;
+        }
+
+        .info-icon {
+            font-size: 1.5em;
+            margin-left: 15px;
+            color: #4CAF50;
+        }
+
+        .phone-number {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.4em;
+            font-weight: bold;
+            display: inline-block;
+            margin: 20px 0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+        }
+
+        .phone-number:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.6);
+        }
+
+        .address {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        .working-hours {
+            margin-top: 25px;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 480px) {
+            .pharmacy-container {
+                padding: 30px 20px;
+                margin: 10px;
+            }
+            
+            .logo {
+                font-size: 2.8em;
+            }
+            
+            .pharmacy-name {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pharmacy-container">
+        <div class="logo">💊</div>
+        <h1 class="pharmacy-name">صيدلية ربيع</h1>
+        
+        <div class="info-section">
+            <div class="info-item">
+                📞
+                <a href="tel:01111026474" class="phone-number">
+                    01111026474
+                </a>
+            </div>
+            
+            <div class="info-item">
+                📍
+                <span class="address">
+                    الطالبية - فيصل - ميدان الساعة<br>
+                    شارع جزارة أبو الغيط
+                </span>
+            </div>
+        </div>
+
+        <div class="working-hours">
+            ⏰ متاحة 24 ساعة لخدمتكم
+        </div>
+    </div>
+</body>
+</html>
